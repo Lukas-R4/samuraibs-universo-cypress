@@ -17,11 +17,13 @@ describe('dashboard', function () {
 
         it('o mesmo deve ser exibido no dashboard', function () {
 
-            const day = Cypress.env('appointmentDay') // come from createAppointment
+            const date = Cypress.env('appointmentDate') // come from createAppointment
 
-            cy.uiLogin(provider)
+            // cy.uiLogin(provider)
+            cy.apiLogin(provider, true)
+
             dashPage.calendarShouldBeVisible()
-            dashPage.selectDay(day)
+            dashPage.selectDay(date)
             dashPage.appointmentShouldBe(customer, appointment.hour)
         });
     })

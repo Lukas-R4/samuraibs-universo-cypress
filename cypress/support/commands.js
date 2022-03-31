@@ -31,7 +31,7 @@ import loginPage from './pages/login'
 import dashPage from './pages/dash'
 
 // App Actions
-Cypress.Commands.add('uiLogin', function(user){
+Cypress.Commands.add('uiLogin', function (user) {
     loginPage.go()
     loginPage.form(user)
     loginPage.submit()
@@ -93,7 +93,7 @@ Cypress.Commands.add('setProviderId', function (providerEmail) {
     })
 })
 
-Cypress.Commands.add('apiLogin', function (user) {
+Cypress.Commands.add('apiLogin', function (user, setLocalStorage = false) {
 
     const payload = {
         email: user.email,
@@ -107,16 +107,25 @@ Cypress.Commands.add('apiLogin', function (user) {
     }).then(function (response) {
         expect(response.status).to.eq(200)
         Cypress.env('apiToken', response.body.token)
+
+        if (setLocalStorage) {
+
+            const { token, user } = response.body // get the token and user from body request
+
+            // the code below, allow to test the login without have to pass the login page. it's like a direct login.
+
+            window.localStorage.setItem('@Samurai:token', token) // set directly on localStorage
+            window.localStorage.setItem('@Samurai:user', JSON.stringify(user)) // set directly on localStorage
+        }
     })
+    if (setLocalStorage) cy.visit('/dashboard')
 })
 
 Cypress.Commands.add('createAppointment', function (hour) {
-
     let now = new Date()
-
     now.setDate(now.getDate() + 1) // D+1
 
-    Cypress.env('appointmentDay', now.getDate())
+    Cypress.env('appointmentDate', now)
 
     const date = moment(now).format(`YYYY-MM-DD ${hour}:00`) //date format
 
