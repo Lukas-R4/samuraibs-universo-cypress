@@ -36,8 +36,7 @@ module.exports = (on, config) => {
           }
           resolve({success: result})
         })
-      })
-      
+      })      
     }
   })
 }
