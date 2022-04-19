@@ -73,12 +73,12 @@ describe('login', () => {
 
                 loginPage.form(user)
                 loginPage.submit()
-                loginPage.alertHaveText('Informe um email válido')
+                loginPage.alert.haveText('Informe um email válido')
             })
         })
     })
 
-    context.only('quando não preencho nenhum dos campos', () => {
+    context('quando não preencho nenhum dos campos', () => {
 
         const alertMessages = [
             'E-mail é obrigatório',
@@ -93,7 +93,7 @@ describe('login', () => {
         alertMessages.forEach((alert) => {
 
             it('deve exibir ' + alert.toLowerCase(), () => {
-                loginPage.alertHaveText(alert)
+                loginPage.alert.haveText(alert)
             })
         })
     })
