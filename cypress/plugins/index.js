@@ -29,14 +29,30 @@ module.exports = (on, config) => {
 
   on('task', { // Exclusão
     removeUser(email) {
-      return new Promise(function(resolve){
-        pool.query('DELETE FROM public.users WHERE email = $1', [email], function(error, result){
+      return new Promise(function (resolve) {
+        pool.query('DELETE FROM public.users WHERE email = $1', [email], function (error, result) {
           if (error) {
             throw error
           }
-          resolve({success: result})
+          resolve({ success: result })
         })
-      })      
+      })
+    },
+    findToken(email) {
+      return new Promise(function (resolve) {
+        pool.query('select T.token from public.user_tokens T ' +
+          'join public.users A on T.user_id = A.id ' +
+          'where A.email = $1 ' +
+          'order by T.created_at', [email], function (error, result) {
+            if (error) {
+              throw error
+            }
+            resolve({ token: result.rows[0].token })
+          })
+      })
+
+
+
     }
   })
 }
