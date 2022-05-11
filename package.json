@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "@Lukas_R4",
   "license": "MIT",
+  "scripts": {
+    "test": "npx cypress open",
+    "teste": "npx cypress run"
+  },
   "devDependencies": {
     "@faker-js/faker": "^6.0.0",
     "cypress": "^9.5.2",
