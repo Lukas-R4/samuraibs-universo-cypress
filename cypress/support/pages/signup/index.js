@@ -22,6 +22,9 @@ class SignupPage {
 
     submit() {
         cy.contains(el.signupButton).click()
+
+        cy.contains(el.title)
+            .should('be.visible')
     }
 }
 
