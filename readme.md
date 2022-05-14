@@ -20,7 +20,7 @@ O intuito do bootcamp é partir do nível básico ao Devops, seguindo a seguinte
  - Git e github
  - Testes de API
  - Tópicos avançados e configurações
- - Infra e Continous Testing
+ - Infra e Continuous Testing
 
 ## Teste você mesmo!
 
@@ -32,7 +32,7 @@ Atualmente a aplicação encontra-se hospedada no Heroku, então não é necess�
 
 **É necessário ter instalado:**
 	
- - NodeJs, na versão 16 ([windows installer](https://nodejs.org/dist/v16.15.0/node-v16.15.0-x86.msi) e [Linux installer](https://nodejs.org/dist/v16.15.0/node-v16.15.0.tar.gz))
+ - NodeJs, na versão 16 ([windows installer](https://nodejs.org/dist/v16.15.0/node-v16.15.0-x86.msi) ou [Linux installer](https://nodejs.org/dist/v16.15.0/node-v16.15.0.tar.gz))
 
  1. **Clone do repositório**
 
@@ -65,7 +65,7 @@ Atualmente a aplicação encontra-se hospedada no Heroku, então não é necess�
 
 	Basta rodar o comando: ```npm test``` e será aberta a interface do cypress com os cenários a serem testados.
 	
-	![cenários cypress](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/cypress.png?raw=true)
+	![cenários cypress](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/readme_images/cypress.png?raw=true)
 
 	E é isso! ;)
 	
@@ -74,21 +74,21 @@ Para quem tem interesse no Devops e continous testing, continue lendo!
 
 A ferramenta de CI que foi que utilizada nesse projeto, foi o github actions. Nele foram configurados jobs que executam os testes automatizados diretamente pela nuvem. Foram criados 3 workflows, para o teste multibrowser.
 
-![workflows - Github Actions](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/workflow.png?raw=true)
+![workflows - Github Actions](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/readme_images/workflow.png?raw=true)
 
 Para executar os testes na nuvem, basta selecionar algum desses workflows e rodar o job.
 
-![Running a Workflow](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/run_workflow.png?raw=true)
+![Running a Workflow](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/readme_images/run_workflow.png?raw=true)
 
 Os testes serão executados e caso não seja exibido o job rodando, basta pressionar "F5". Isso leva algum tempo, tendo em vista que o actions vai criar um container, baixar a imagem, preparar todo o ambiente para depois rodar os testes. E todo esse fluxo pode ser acompanhado a nível de terminal clicando no job que está sendo executado.
 
 Após finalizar, os resultados do teste serão enviados para o dashboard do cypress, que é integrado ao github actions, e por lá dá pra ver várias informações legais!
 
 Quando finalizar o teste, será disponibilizado o link para o dashboard:
-![Terminal running job](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/link_dashboard.png?raw=true)
+![Terminal running job](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/readme_images/link_dashboard.png?raw=true)
 
 Ao clicar no link, o dashboard será exibido:
 
-![dashboard with tests results](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/dashboard.png?raw=true)
+![dashboard with tests results](https://github.com/Lukas-R4/samuraibs-universo-cypress/blob/main/cypress/fixtures/readme_images/dashboard.png?raw=true)
 
 É isso! =D
