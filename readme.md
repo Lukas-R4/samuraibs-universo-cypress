@@ -8,7 +8,7 @@ O sistema a ser testado é o Samurai Barber Shop, sistema de agendamento de hor�
 
 Fique à vontade para criar sua conta e testar!
 
-* Lembrando que a aplicação apenas consulta agendamentos e para marcar algum agendamento é necessário fazer via API, pois originalmente os agendamentos seriam realizados via mobile (o que não foi implementado).
+* Lembrando que a aplicação apenas consulta agendamentos e para marcar algum agendamento é necessário fazê-lo via API, pois originalmente os agendamentos seriam realizados via mobile (o que não foi implementado).
 * Contexto: Quando você se cadastra, seu papel é de prestador de serviços. O cliente que tem o aplicativo no celular móvel pode agendar algum serviço com você. E pelo sistema web, você consulta os clientes e as datas dos agendamentos.
 
 ## Módulos
