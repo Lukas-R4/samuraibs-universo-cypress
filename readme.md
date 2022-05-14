@@ -69,7 +69,7 @@ Atualmente a aplicação encontra-se hospedada no Heroku, então não é necess�
 
 	E é isso! ;)
 	
-Para quem tem interesse no Devops e continous testing, continue lendo!
+Para quem tem interesse no Devops e continuous testing, continue lendo!
 ## Continuous testing
 
 A ferramenta de CI que foi que utilizada nesse projeto, foi o github actions. Nele foram configurados jobs que executam os testes automatizados diretamente pela nuvem. Foram criados 3 workflows, para o teste multibrowser.
